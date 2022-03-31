@@ -1,0 +1,47 @@
+#coder {
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	position: absolute;
+	animation-name: animator-coder-container;
+	animation-duration: 1s;
+	user-select: none;
+}
+
+#memory {
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	position: absolute;
+	animation-name: animator-memory-container;
+	animation-duration: 1s;
+	user-select: none;
+}
+
+.header {
+	font-size: min(5vw, 5vh);
+	text-align: center;
+	vertical-align: middle;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.footer {
+	font-size: min(2vw, 2vh);
+	text-align: center;
+	vertical-align: middle;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes animator-memory-container {
+	from {
+		margin-left: 100%;
+	}
+	to {
+		margin-left: 5%;
+	}
+}
+
+@keyframes animator-coder-container {
+	from {
+		margin-left: 100%;
+	}
+	to {
+		margin-left: 0%;
+	}
+}

@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  glotl-asm-dev:
+    image: node:16-alpine3.11
+    container_name: glotl-asm-dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/home/node/app
+    working_dir: /home/node/app
+    command: tail -f /dev/null
