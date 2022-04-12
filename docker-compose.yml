@@ -5,6 +5,7 @@ services:
     container_name: glotl-asm-dev
     ports:
       - 3000:3000
+      - 9005:9005
     volumes:
       - ./:/home/node/app
     working_dir: /home/node/app
