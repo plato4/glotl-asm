@@ -19,8 +19,8 @@ type Oper = number;
 type Params = number[];
 
 export const lex = (code: string): LexerResult => {
-	let preprocessed = preprocess(code);
-	let lexerResult = process(preprocessed);
+	const preprocessed = preprocess(code);
+	const lexerResult = process(preprocessed);
 
 	return lexerResult;
 };
@@ -37,11 +37,11 @@ const process = (code: Preprocessed): LexerResult => {
 	let instructions: Instructions = [];
 
 	for (let i = 0; i < code.length; i++) {
-		let line = code[i];
+		const line = code[i];
 
-		let operator = getOperator(line);
+		const operator = getOperator(line);
 		if (operator === null) return { lexerStatus: LexerStatus.Error, line: i, instructions: [] };
-		let params = getParams(line);
+		const params = getParams(line);
 		if (params === null) return { lexerStatus: LexerStatus.Error, line: i, instructions: [] };
 
 		switch (operator) {
@@ -63,8 +63,6 @@ const process = (code: Preprocessed): LexerResult => {
 			case OperatorType.SET:
 			case OperatorType.ADD:
 			case OperatorType.SUB:
-			case OperatorType.MUL:
-			case OperatorType.DIV:
 				if (params.length !== 4) return { lexerStatus: LexerStatus.Error, line: i, instructions: [] };
 				if (params[0] !== ParamType.INDIRECT && params[0] !== ParamType.MEMORY)
 					return { lexerStatus: LexerStatus.Error, line: i, instructions: [] };
@@ -72,7 +70,7 @@ const process = (code: Preprocessed): LexerResult => {
 			default:
 				return { lexerStatus: LexerStatus.Error, line: i, instructions: [] };
 		}
-		var instruction: Instruction = [operator, ...params];
+		const instruction: Instruction = [operator, ...params];
 		instructions.push(instruction);
 	}
 	instructions = instructions.filter((x) => x.length > 0);
@@ -92,7 +90,7 @@ const getOperator = (line: Line): OperatorType | null => {
 };
 
 const getParams = (line: Line): Params | null => {
-	let params: Params = [];
+	const params: Params = [];
 
 	//nothing has more than 3
 	if (line.length > 3) return null;
@@ -100,12 +98,12 @@ const getParams = (line: Line): Params | null => {
 	let valid = true;
 	line.forEach((v, i) => {
 		if (i === 0) return;
-		let is_indirect = v.startsWith(">");
+		const is_indirect = v.startsWith(">");
 		if (is_indirect) v = v.substring(1, v.length);
 
-		let is_memory = v.startsWith("#");
+		const is_memory = v.startsWith("#");
 		if (is_memory) v = v.substring(1, v.length);
-		let is_data = v.length > 0;
+		const is_data = v.length > 0;
 
 		if (!is_memory && is_indirect) valid = false;
 		if (!is_data) valid = false;

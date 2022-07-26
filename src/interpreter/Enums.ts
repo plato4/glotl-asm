@@ -1,17 +1,15 @@
 export enum OperatorType {
 	NON,
+	SET,
+	ADD,
+	SUB,
 	LBL,
+	CMP,
 	JMP,
 	JLT,
 	JGT,
 	JET,
 	JNE,
-	CMP,
-	SET,
-	ADD,
-	SUB,
-	MUL,
-	DIV,
 }
 
 export enum ParamType {
