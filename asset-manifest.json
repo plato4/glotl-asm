@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.495d6001.css",
-    "main.js": "/static/js/main.fd5e21dc.js",
-    "index.html": "/index.html",
-    "main.495d6001.css.map": "/static/css/main.495d6001.css.map",
-    "main.fd5e21dc.js.map": "/static/js/main.fd5e21dc.js.map"
+    "main.css": "/glotl-asm/static/css/main.495d6001.css",
+    "main.js": "/glotl-asm/static/js/main.fd5e21dc.js",
+    "index.html": "/glotl-asm/index.html",
+    "main.495d6001.css.map": "/glotl-asm/static/css/main.495d6001.css.map",
+    "main.fd5e21dc.js.map": "/glotl-asm/static/js/main.fd5e21dc.js.map"
   },
   "entrypoints": [
     "static/css/main.495d6001.css",
